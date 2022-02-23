@@ -26,9 +26,9 @@ public class UtilidadesFicheros {
     public static List<Personaje>  leerFicheroPersonajes() throws IOException {
 
         List<Personaje> personajes = new ArrayList<>();
-        CSVReader reader = null;                          //"D:\\Descargas Utorrent\\estudios\\DAW 1\\java proyect lol\\src\\main\\java\\coche.csv"
+        CSVReader reader = null;                          //"D:\\javalol\\src\\main\\java\\archivos\\personajes.csv"
         try {                                            //"E:\\java proyect 2\\src\\main\\java\\Coche.csv"
-            reader = new CSVReader(new FileReader("D:\\Descargas Utorrent\\estudios\\DAW 1\\java proyect lol\\src\\main\\java\\coche.csv"),SEPARATOR,QUOTE);
+            reader = new CSVReader(new FileReader("D:\\javalol\\src\\main\\java\\archivos\\personajes.csv"),SEPARATOR,QUOTE);
             String[] nextLine= null ;
             int count = 0;
 

@@ -62,7 +62,7 @@ public class UtilidadesPersonaje {
         mapa.put(Region.TARGON,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.TARGON)).collect(Collectors.toList())));
         mapa.put(Region.FREIJORD,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.FREIJORD)).collect(Collectors.toList())));
         mapa.put(Region.PILTOVER,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.PILTOVER)).collect(Collectors.toList())));
-        mapa.put(Region.ZAUM,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.ZAUM)).collect(Collectors.toList())));
+        mapa.put(Region.ZAUN,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.ZAUN)).collect(Collectors.toList())));
         mapa.put(Region.BANDLE,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.BANDLE)).collect(Collectors.toList())));
         mapa.put(Region.AGUAS_ESTANCADAS,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.AGUAS_ESTANCADAS)).collect(Collectors.toList())));
         mapa.put(Region.DESCONOCIDA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.DESCONOCIDA)).collect(Collectors.toList())));
