@@ -20,7 +20,7 @@ public class UtilidadesFicheros {
     public UtilidadesFicheros() {
     }
 
-    public static final char SEPARATOR=';';
+    public static final char SEPARATOR=',';
     public static final char QUOTE='"';
 
     public static List<Personaje>  leerFicheroPersonajes() throws IOException {
@@ -35,7 +35,7 @@ public class UtilidadesFicheros {
             while ((nextLine = reader.readNext()) != null) {
 
                 if(count >0) {
-                    String[] valores = nextLine[0].toString().split(",");
+                    String[] valores = nextLine;
                     Personaje p = new Personaje();
                     p.setId(Integer.parseInt(valores[0]));
                     p.setNombre(valores[1]);
