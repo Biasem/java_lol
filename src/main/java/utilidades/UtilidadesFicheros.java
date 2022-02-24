@@ -27,8 +27,8 @@ public class UtilidadesFicheros {
 
         List<Personaje> personajes = new ArrayList<>();
         CSVReader reader = null;                          //"D:\\javalol\\src\\main\\java\\archivos\\personajes.csv"
-        try {                                            //"E:\\java proyect 2\\src\\main\\java\\Coche.csv"
-            reader = new CSVReader(new FileReader("D:\\javalol\\src\\main\\java\\archivos\\personajes.csv"),SEPARATOR,QUOTE);
+        try {                                            //"E:\java_lol\src\main\java\archivos\personajes.csv"
+            reader = new CSVReader(new FileReader("E:\\java_lol\\src\\main\\java\\archivos\\personajes.csv"),SEPARATOR,QUOTE);
             String[] nextLine= null ;
             int count = 0;
 
