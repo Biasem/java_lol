@@ -1,0 +1,8 @@
+id,nombre,aumento_daño,aumento_defensa,aumento_salud,aumento_mana
+1,Filo Infinito,80,0,0,0
+2,Arco Axiomático,60,0,0,0
+3,Hidra Titánica,30,20,100,0
+4,Sombrero Mortal de Rabadón,120,0,0,0
+5,Eco de Ludden,80,0,0,100
+6,Capa de Fuego Solar,10,60,200,0
+7,Armadura de Warmong,0,20,400,0

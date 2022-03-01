@@ -1,0 +1,7 @@
+id,id_personaje,nombre,daño_base,coste_mana,tipo
+1,1,disparo arcano,100,20,DAÑO
+2,1,onda certera,500,100,DAÑO
+3,2,enlace de luz,120,60,DAÑO
+4,2,singularidad brillante,300,80,DAÑO
+5,10,dardo cegador,90,60,DAÑO
+6,10,seta venenosa,200,90,DAÑO
