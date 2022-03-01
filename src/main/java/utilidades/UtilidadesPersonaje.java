@@ -37,7 +37,7 @@ public class UtilidadesPersonaje {
         Personaje poderoso = new Personaje();
         for (Personaje perso :personaje){
             while(perso.getNivel()<18){
-                levelUp(perso);
+                perso = levelUp(perso);
             }
             if (poderoso.getNivel()==null){
                 poderoso = perso;
