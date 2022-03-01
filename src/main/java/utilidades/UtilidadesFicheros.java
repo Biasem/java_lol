@@ -44,10 +44,10 @@ public class UtilidadesFicheros {
                     p.setId(Integer.parseInt(valores[0]));
                     p.setNombre(valores[1]);
                     p.setFechaCreacion(LocalDate.parse(valores[2], DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-                    p.setAtaqueBase( Double.parseDouble(valores[3]));
-                    p.setDefensaBase( Double.parseDouble(valores[4]));
-                    p.setVidaBase( Double.parseDouble(valores[5]));
-                    p.setManaBase( Double.parseDouble(valores[6]));
+                    p.setAtaqueBase( Double.valueOf(valores[3]));
+                    p.setDefensaBase( Double.valueOf(valores[4]));
+                    p.setVidaBase( Double.valueOf(valores[5]));
+                    p.setManaBase( Double.valueOf(valores[6]));
                     p.setRegion( Region.valueOf(valores[7]));
                     p.setNivel(0);
                     p.setEscalabilidad(new Escalabilidad(1,1.1,1.1,1.1,1.1));
