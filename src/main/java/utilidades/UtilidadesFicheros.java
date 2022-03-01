@@ -1,6 +1,7 @@
 package utilidades;
 
 import com.opencsv.CSVReader;
+import modelos.Escalabilidad;
 import modelos.Personaje;
 import modelos.Region;
 
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class UtilidadesFicheros {
 
 
@@ -23,7 +25,8 @@ public class UtilidadesFicheros {
     public static final char SEPARATOR=',';
     public static final char QUOTE='"';
 
-    public static List<Personaje>  leerFicheroPersonajes() throws IOException {
+    public static List<Personaje>  leerPersonajes() throws IOException {
+    UtilidadesPersonaje up = new UtilidadesPersonaje();
 
         List<Personaje> personajes = new ArrayList<>();
         CSVReader reader = null;                          //"D:\\javalol\\src\\main\\java\\archivos\\personajes.csv"
@@ -35,6 +38,7 @@ public class UtilidadesFicheros {
             while ((nextLine = reader.readNext()) != null) {
 
                 if(count >0) {
+
                     String[] valores = nextLine;
                     Personaje p = new Personaje();
                     p.setId(Integer.parseInt(valores[0]));
@@ -45,6 +49,9 @@ public class UtilidadesFicheros {
                     p.setVidaBase( Double.parseDouble(valores[5]));
                     p.setManaBase( Double.parseDouble(valores[6]));
                     p.setRegion( Region.valueOf(valores[7]));
+                    p.setNivel(0);
+                    p.setEscalabilidad(new Escalabilidad(1,1.1,1.1,1.1,1.1));
+                    up.levelUp(p);
                     personajes.add(p);
                 }
                 count++;
