@@ -69,18 +69,14 @@ public class UtilidadesFicheros {
     }
     public static List<Personaje>  leerYAprenderHabilidades() throws IOException {
     List<Personaje> listapersonajes = leerPersonajes();
-
     int id_personaje;
-
     CSVReader reader = null;
         try {
-        reader = new CSVReader(new FileReader("E:\\java_lol\\src\\main\\java\\documentos\\habilidades.csv"),SEPARATOR,QUOTE);
-        String[] nextLine = null;
-
-        int count = 0;
-
            for (Personaje p:listapersonajes){
                List<Habilidad> lista = new ArrayList<>();
+               int count = 0;
+               reader = new CSVReader(new FileReader("E:\\java_lol\\src\\main\\java\\documentos\\habilidades.csv"),SEPARATOR,QUOTE);
+               String[] nextLine = null;
                while ((nextLine = reader.readNext()) != null) {
                    if (count > 0) {
                        String[] valores = nextLine;
@@ -99,14 +95,43 @@ public class UtilidadesFicheros {
                }
                p.setHabilidades(lista);
            }
-
-
         }
         catch (Exception e){
             throw e;
         }
         return listapersonajes;
         }
+
+
+    public static List<Item>  leerItems() throws IOException {
+        List<Item> lista = new ArrayList<>();
+        CSVReader reader = null;
+        try {
+            reader = new CSVReader(new FileReader("E:\\java_lol\\src\\main\\java\\documentos\\items.csv"),SEPARATOR,QUOTE);
+            String[] nextLine = null;
+            int count =0;
+            while ((nextLine = reader.readNext()) != null) {
+                if (count > 0) {
+                    String[] valores = nextLine;
+                    Item item = new Item();
+                    item.setId(Integer.parseInt(valores[0]));
+                    item.setNombre(valores[1]);
+                    item.setAumentoDaño(Double.valueOf(valores[2]));
+                    item.setAumentoDefensa(Double.valueOf(valores[3]));
+                    item.setAumentoSalud(Double.valueOf(valores[4]));
+                    item.setAumentoMana(Double.valueOf(valores[5]));
+                    lista.add(item);
+                }
+                count++;
+            }
+        }
+        catch (Exception e){
+            throw e;
+        }
+        return  lista;
+
+
+    }
 
 
 
