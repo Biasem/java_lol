@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class UtilidadesPersonaje {
 
-
+    public UtilidadesPersonaje(){}
 
     //Que recibiendo un personaje aumente su nivel en 1, actualizando
     //todas sus estadísticas según su escalabilidad.
