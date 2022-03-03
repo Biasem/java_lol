@@ -5,15 +5,15 @@ import java.util.Objects;
 public class Item {
     private int id;
     private String nombre;
-    private Double aumentoDaño;
+    private Double aumentoDanio;
     private Double aumentoDefensa;
     private Double aumentoSalud;
     private Double aumentoMana;
 
-    public Item(int id, String nombre, Double aumentoDaño, Double aumentoDefensa, Double aumentoSalud, Double aumentoMana) {
+    public Item(int id, String nombre, Double aumentoDanio, Double aumentoDefensa, Double aumentoSalud, Double aumentoMana) {
         this.id = id;
         this.nombre = nombre;
-        this.aumentoDaño = aumentoDaño;
+        this.aumentoDanio = aumentoDanio;
         this.aumentoDefensa = aumentoDefensa;
         this.aumentoSalud = aumentoSalud;
         this.aumentoMana = aumentoMana;
@@ -38,12 +38,12 @@ public class Item {
         this.nombre = nombre;
     }
 
-    public Double getAumentoDaño() {
-        return aumentoDaño;
+    public Double getAumentoDanio() {
+        return aumentoDanio;
     }
 
-    public void setAumentoDaño(Double aumentoDaño) {
-        this.aumentoDaño = aumentoDaño;
+    public void setAumentoDanio(Double aumentoDanio) {
+        this.aumentoDanio = aumentoDanio;
     }
 
     public Double getAumentoDefensa() {
@@ -75,7 +75,7 @@ public class Item {
         return "Item{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", aumentoDaño=" + aumentoDaño +
+                ", aumentoDaño=" + aumentoDanio +
                 ", aumentoDefensa=" + aumentoDefensa +
                 ", aumentoSalud=" + aumentoSalud +
                 ", aumentoMana=" + aumentoMana +
@@ -87,11 +87,11 @@ public class Item {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return id == item.id && Objects.equals(nombre, item.nombre) && Objects.equals(aumentoDaño, item.aumentoDaño) && Objects.equals(aumentoDefensa, item.aumentoDefensa) && Objects.equals(aumentoSalud, item.aumentoSalud) && Objects.equals(aumentoMana, item.aumentoMana);
+        return id == item.id && Objects.equals(nombre, item.nombre) && Objects.equals(aumentoDanio, item.aumentoDanio) && Objects.equals(aumentoDefensa, item.aumentoDefensa) && Objects.equals(aumentoSalud, item.aumentoSalud) && Objects.equals(aumentoMana, item.aumentoMana);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, aumentoDaño, aumentoDefensa, aumentoSalud, aumentoMana);
+        return Objects.hash(id, nombre, aumentoDanio, aumentoDefensa, aumentoSalud, aumentoMana);
     }
 }

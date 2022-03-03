@@ -116,7 +116,7 @@ public class UtilidadesFicheros {
                     Item item = new Item();
                     item.setId(Integer.parseInt(valores[0]));
                     item.setNombre(valores[1]);
-                    item.setAumentoDaño(Double.valueOf(valores[2]));
+                    item.setAumentoDanio(Double.valueOf(valores[2]));
                     item.setAumentoDefensa(Double.valueOf(valores[3]));
                     item.setAumentoSalud(Double.valueOf(valores[4]));
                     item.setAumentoMana(Double.valueOf(valores[5]));
