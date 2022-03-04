@@ -7,6 +7,8 @@ import java.util.List;
 
 public class UtilidadesItem {
 
+public UtilidadesItem(){}
+
     public void equiparItem(Personaje personaje, Item item){
         List<Item> listaequipada = personaje.getEquipamiento();
         listaequipada.add(item);
