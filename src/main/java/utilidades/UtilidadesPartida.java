@@ -11,21 +11,28 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
     public void inicializarPartida(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles){
        Map<Jugador,Personaje> mapaJugadorPersonaje = new HashMap<>();
+       Set<Jugador> eq1 = new HashSet<>();
+       Set<Jugador> eq2 = new HashSet<>();
        Map<Integer, Set<Jugador>> mapaEquipos = new HashMap<>();
        for (Jugador j: participantes){
            List<Personaje> eleccion = new ArrayList<>(personajesDisponibles);
            eleccion.retainAll(j.getPersonajesFavoritos());
            if (!eleccion.isEmpty()){
-               int rnd = (int) (Math.random()*( eleccion.size()-1));
+               int rnd = (int) (Math.random()*( eleccion.size()+1));
                mapaJugadorPersonaje.put(j, eleccion.get(rnd));
            }else{
-               int rnd = (int) (Math.random()*( personajesDisponibles.size()-1));
+               int rnd = (int) (Math.random()*( personajesDisponibles.size()+1));
                mapaJugadorPersonaje.put(j, eleccion.get(rnd));
            }
+           int rnd = (int) (Math.random()*2);
+           if (rnd ==0){
+               eq1.add(j);
+           }else{
+               eq2.add(j);
+           }
        }
-
-
-
+       mapaEquipos.put(1,eq1);
+       mapaEquipos.put(2,eq2);
        partida.setElecciones(mapaJugadorPersonaje);
        partida.setJugadoresPorEquipo(mapaEquipos);
        partida.setInicioPartida(LocalDateTime.now());
