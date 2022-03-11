@@ -45,7 +45,19 @@ public class UtilidadesPartida implements IUtilidadesPartida{
     partida.setDuracionPartida(tiempo);
     partida.setEquipoVencedor(equipoVencedor);
 
+    for(Jugador j:partida.getJugadoresPorEquipo().get(equipoVencedor)){
+        if (j.getPartidasGanadas().equals(null) || j.getPartidasGanadas().size()==0){
+            Map<Personaje,Integer> mapa = new HashMap<>();
+            mapa.put(partida.getElecciones().get(j),1);
+        }
+        else if(j.getPartidasGanadas().keySet().contains(partida.getElecciones().get(j))== true){
+        j.getPartidasGanadas().put(partida.getElecciones().get(j),j.getPartidasGanadas().get(partida.getElecciones().get(j))+1);
+        }
+        else if(j.getPartidasGanadas().keySet().contains(partida.getElecciones().get(j))== false){
+            j.getPartidasGanadas().put(partida.getElecciones().get(j),1);
 
+        }
+    }
 
     }
 }
