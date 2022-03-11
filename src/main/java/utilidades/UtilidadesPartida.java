@@ -14,6 +14,9 @@ public class UtilidadesPartida implements IUtilidadesPartida{
        Set<Jugador> eq1 = new HashSet<>();
        Set<Jugador> eq2 = new HashSet<>();
        Map<Integer, Set<Jugador>> mapaEquipos = new HashMap<>();
+       List<Personaje> copiapersonajes = personajesDisponibles;
+
+       // Elecciones de personajes--------------------------------------------------------
        for (Jugador j: participantes){
            List<Personaje> eleccion = new ArrayList<>(personajesDisponibles);
            eleccion.retainAll(j.getPersonajesFavoritos());
@@ -24,13 +27,22 @@ public class UtilidadesPartida implements IUtilidadesPartida{
                int rnd = (int) (Math.random()*( personajesDisponibles.size()+1));
                mapaJugadorPersonaje.put(j, eleccion.get(rnd));
            }
-           int rnd = (int) (Math.random()*2);
-           if (rnd ==0){
+
+           //Eleccion de equipos----------------------------------------------------------
+           if (eq1.size()== participantes.size()/2){
+               eq2.add(j);
+           }else if(eq2.size()== participantes.size()/2){
                eq1.add(j);
            }else{
-               eq2.add(j);
+               int rnd = (int) (Math.random()*2);
+               if (rnd ==0){
+                   eq1.add(j);
+               }else{
+                   eq2.add(j);
+               }
            }
        }
+       //Final del método
        mapaEquipos.put(1,eq1);
        mapaEquipos.put(2,eq2);
        partida.setElecciones(mapaJugadorPersonaje);

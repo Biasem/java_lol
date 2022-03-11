@@ -28,7 +28,7 @@ public class Prueba {
         s2.add(4);
         prueba.put(1, s1);
         prueba.put(2, s2);
-        System.out.println(prueba.keySet().contains(1));
+        System.out.println(prueba.size());
 
 
     }
