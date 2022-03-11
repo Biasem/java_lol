@@ -43,7 +43,9 @@ public class UtilidadesPartida implements IUtilidadesPartida{
     partida.setFinPartida(LocalDateTime.now());
     tiempo = partida.getFinPartida().getSecond()-partida.getInicioPartida().getSecond();
     partida.setDuracionPartida(tiempo);
-
     partida.setEquipoVencedor(equipoVencedor);
+
+
+
     }
 }
