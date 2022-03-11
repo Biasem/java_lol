@@ -39,7 +39,11 @@ public class UtilidadesPartida implements IUtilidadesPartida{
     }
 
     public void finalizarPartida(Partida partida, Integer equipoVencedor){
+    int tiempo = 0;
+    partida.setFinPartida(LocalDateTime.now());
+    tiempo = partida.getFinPartida().getSecond()-partida.getInicioPartida().getSecond();
+    partida.setDuracionPartida(tiempo);
 
-
+    partida.setEquipoVencedor(equipoVencedor);
     }
 }
