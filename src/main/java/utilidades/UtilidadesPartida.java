@@ -18,14 +18,16 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
        // Elecciones de personajes--------------------------------------------------------
        for (Jugador j: participantes){
-           List<Personaje> eleccion = new ArrayList<>(personajesDisponibles);
+           List<Personaje> eleccion = new ArrayList<>(copiapersonajes);
            eleccion.retainAll(j.getPersonajesFavoritos());
            if (!eleccion.isEmpty()){
                int rnd = (int) (Math.random()*( eleccion.size()+1));
                mapaJugadorPersonaje.put(j, eleccion.get(rnd));
+               copiapersonajes.remove(rnd);
            }else{
-               int rnd = (int) (Math.random()*( personajesDisponibles.size()+1));
-               mapaJugadorPersonaje.put(j, eleccion.get(rnd));
+               int rnd = (int) (Math.random()*( copiapersonajes.size()+1));
+               mapaJugadorPersonaje.put(j, copiapersonajes.get(rnd));
+               copiapersonajes.remove(rnd);
            }
 
            //Eleccion de equipos----------------------------------------------------------

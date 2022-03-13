@@ -18,17 +18,19 @@ public class Prueba {
         int tiempofin = LocalDateTime.now().getSecond();
         System.out.println(tiempofin-tiempoinicio);*/
         Map<Integer,Set<Integer>> prueba = new HashMap<>();
+
         Set<Integer> s1 = new HashSet<>();
-        Set<Integer> s2 = new HashSet<>();
         s1.add(4);
         s1.add(2);
         s1.add(3);
+        Set<Integer> s2 = s1;
+
         s2.add(3);
         s2.add(2);
         s2.add(4);
         prueba.put(1, s1);
         prueba.put(2, s2);
-        System.out.println(prueba.size());
+        System.out.println(s2.size());
 
 
     }
