@@ -1,12 +1,16 @@
 package utilidades;
 
+import modelos.Personaje;
+
+import java.io.IOException;
 import java.sql.*;
+import java.util.List;
 
 public class UtilidadesBBDD {
-
-    private static final String url = "jdbc:mariadb://localhost:3306/padel";
+    private  UtilidadesFicheros uf = new UtilidadesFicheros() ;
+    private static final String url = "jdbc:mariadb://localhost:3306/lolete";
     private static final String usuario = "root";
-    private static final String password = "patata123";
+    private static final String password = "1234";
 
 
     private static Connection conectarConBD() {
@@ -19,8 +23,13 @@ public class UtilidadesBBDD {
         }
         return conexion;
     }
+    public void crearTablas() throws IOException {
+        List<Personaje> Listapersonajes = uf.leerPersonajes();
 
-    public static void mostrarPalas(){
+
+    }
+
+   /* public static void mostrarPalas(){
 
         Connection con = conectarConBD();
 
@@ -47,7 +56,7 @@ public class UtilidadesBBDD {
                         + e.toString());
             }
         }
-    }
+    }*/
 
 
 
