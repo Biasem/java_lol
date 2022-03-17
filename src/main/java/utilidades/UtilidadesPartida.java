@@ -7,9 +7,9 @@ import modelos.Personaje;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class UtilidadesPartida implements IUtilidadesPartida{
+public class UtilidadesPartida {
 
-    public void inicializarPartida(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles){
+    public static void inicializarPartida(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles){
        Map<Jugador,Personaje> mapaJugadorPersonaje = new HashMap<>();
        Set<Jugador> eq1 = new HashSet<>();
        Set<Jugador> eq2 = new HashSet<>();
@@ -56,7 +56,7 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
     }
 
-    public void finalizarPartida(Partida partida, Integer equipoVencedor){
+    public static void finalizarPartida(Partida partida, Integer equipoVencedor){
     int tiempo = 0;
     partida.setFinPartida(LocalDateTime.now());
     tiempo = partida.getFinPartida().getSecond()-partida.getInicioPartida().getSecond();

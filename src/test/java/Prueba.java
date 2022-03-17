@@ -12,7 +12,7 @@ public class Prueba {
 
         List<Personaje> p1 = UtilidadesFicheros.leerPersonajes();
 
-        Jugador j1 = new Jugador(1,"xanos",);
+        //Jugador j1 = new Jugador(1,"xanos",);
 
 
 

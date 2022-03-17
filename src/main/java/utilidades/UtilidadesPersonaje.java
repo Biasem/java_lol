@@ -37,17 +37,21 @@ public class UtilidadesPersonaje {
     //poderoso.
     public static Personaje getMasPoderoso(List<Personaje> personaje){
         Personaje poderoso = new Personaje();
+        poderoso = personaje.get(0);
+        Double stats;
+        Double statspod;
+
         for (Personaje perso :personaje){
+
             while(perso.getNivel()<18){
                 levelUp(perso);
             }
-            if (poderoso.getNivel()==null){
+            stats = perso.getAtaque()+ perso.getDefensa()+perso.getMana()+perso.getVida();
+            statspod = poderoso.getAtaque()+poderoso.getDefensa()+ poderoso.getMana()+poderoso.getVida();
+             if(stats>statspod){
                 poderoso = perso;
             }
-            if((perso.getAtaque()+ perso.getDefensa()+perso.getMana()+perso.getVida())>
-                    (perso.getAtaque())+poderoso.getDefensa()+ poderoso.getMana()+ poderoso.getVida()){
-                poderoso = perso;
-            }
+
         }
         return poderoso;
     }

@@ -7,7 +7,7 @@ import modelos.TipoHabilidad;
 
 public class UtilidadesHabilidad {
 
-    public void golpearConHabilidad(Personaje emisor, Personaje receptor,Habilidad habilidadEmisor){
+    public static void golpearConHabilidad(Personaje emisor, Personaje receptor, Habilidad habilidadEmisor){
         UtilidadesPersonaje up = new UtilidadesPersonaje();
         UtilidadesItem ui = new UtilidadesItem();
         double daniohabilidad;

@@ -9,7 +9,7 @@ public class UtilidadesItem {
 
 public UtilidadesItem(){}
 
-    public void equiparItem(Personaje personaje, Item item){
+    public static void equiparItem(Personaje personaje, Item item){
         List<Item> listaequipada = personaje.getEquipamiento();
         listaequipada.add(item);
         personaje.setDefensa(personaje.getDefensa()+ item.getAumentoDefensa());
