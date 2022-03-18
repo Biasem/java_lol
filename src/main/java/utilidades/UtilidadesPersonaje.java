@@ -4,6 +4,7 @@ import modelos.Escalabilidad;
 import modelos.Personaje;
 import modelos.Region;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,20 +61,42 @@ public class UtilidadesPersonaje {
 
     public static Map<Region, Personaje> getMasPoderosoPorRegion(List<Personaje> personajes){
         Map<Region,Personaje> mapa = new HashMap<>();
+        Personaje persoAux = new Personaje();
 
-        mapa.put(Region.DEMACIA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.DEMACIA)).collect(Collectors.toList())));
-        mapa.put(Region.NOXUS,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.NOXUS)).collect(Collectors.toList())));
-        mapa.put(Region.JONIA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.JONIA)).collect(Collectors.toList())));
-        mapa.put(Region.SHURIMA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.SHURIMA)).collect(Collectors.toList())));
-        mapa.put(Region.TARGON,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.TARGON)).collect(Collectors.toList())));
-        mapa.put(Region.FREIJORD,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.FREIJORD)).collect(Collectors.toList())));
-        mapa.put(Region.PILTOVER,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.PILTOVER)).collect(Collectors.toList())));
-        mapa.put(Region.ZAUN,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.ZAUN)).collect(Collectors.toList())));
-        mapa.put(Region.BANDLE,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.BANDLE)).collect(Collectors.toList())));
-        mapa.put(Region.AGUAS_ESTANCADAS,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.AGUAS_ESTANCADAS)).collect(Collectors.toList())));
-        mapa.put(Region.DESCONOCIDA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.DESCONOCIDA)).collect(Collectors.toList())));
-
-        return mapa;
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.DEMACIA)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.DEMACIA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.DEMACIA)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.NOXUS)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.NOXUS,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.NOXUS)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.JONIA)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.JONIA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.JONIA)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.SHURIMA)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.SHURIMA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.SHURIMA)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.DEMACIA)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.DEMACIA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.DEMACIA)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.TARGON)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.TARGON,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.TARGON)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.FREIJORD)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.FREIJORD,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.FREIJORD)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.PILTOVER)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.PILTOVER,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.PILTOVER)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.BANDLE)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.BANDLE,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.BANDLE)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.AGUAS_ESTANCADAS)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.AGUAS_ESTANCADAS,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.AGUAS_ESTANCADAS)).collect(Collectors.toList())));
+        }
+        if(!personajes.stream().filter(p-> p.getRegion().equals(Region.DESCONOCIDA)).collect(Collectors.toList()).isEmpty()){
+            mapa.put(Region.DESCONOCIDA,getMasPoderoso(personajes.stream().filter(p-> p.getRegion().equals(Region.DESCONOCIDA)).collect(Collectors.toList())));
+        }
+       return mapa;
     }
 
 
